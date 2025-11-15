@@ -1,4 +1,5 @@
 //import React, { useMemo } from "react";
+//import "@solana/wallet-adapter-react-ui/styles.css";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -11,6 +12,7 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 //import { clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
+import {Airdrop} from "./Airdrop"
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
           </div>
         </WalletModalProvider>
       </WalletProvider>
+      <Airdrop></Airdrop>
     </ConnectionProvider>
   );
 }
