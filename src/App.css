@@ -1,0 +1,99 @@
+/* App.css */
+
+/* Header wallet buttons */
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* Glassmorphic card */
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+
+  padding: 25px 30px;
+  margin-bottom: 35px;
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card title */
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #86cce1;
+}
+
+/* Inputs */
+.card input {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+  
+  margin-bottom: 18px;
+  font-size: 16px;
+
+  background: rgba(80, 94, 102, 0.15);
+  color: #ffffff;
+
+  outline: none;
+}
+
+.card input::placeholder {
+  color: #b9c7ff;
+}
+
+/* Buttons */
+.card button {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #ffffff;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #24365f, #71a0a7);
+  transition: 0.25s;
+}
+
+.card button:hover {
+  opacity: 0.8;
+  transform: scale(1.03);
+}
+
+/* Balance */
+#balance {
+  font-size: 30px;
+  margin-top: 12px;
+  font-weight: 700;
+  color: #6cacce;
+}
+
+/* Divider / Section spacing */
+.section-title {
+  color: #8ab8ff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Space between sections */
+.section {
+  margin-bottom: 45px;
+}

@@ -1,44 +1,68 @@
-//import React, { useMemo } from "react";
-//import "@solana/wallet-adapter-react-ui/styles.css";
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+
 import {
   WalletModalProvider,
   WalletDisconnectButton,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-//import { clusterApiUrl } from "@solana/web3.js";
-import "@solana/wallet-adapter-react-ui/styles.css";
-import {RequestAirdrop} from "./RequestAirdrop"
-import { SendTokens } from "./SendTokens";
-import { ShowSolBalance } from "./ShowBalance";
 
+import "@solana/wallet-adapter-react-ui/styles.css";
+import "./App.css";  // <-- Make sure this is added
+
+import { RequestAirdrop } from "./RequestAirdrop";
+import { ShowSolBalance } from "./ShowBalance";
+import { SendTokens } from "./SendTokens";
+import { SignMessage } from "./SignMessage";
 
 function App() {
- // const network = WalletAdapterNetwork.Devnet;
-
-  //const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   return (
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+
+          {/* Header Wallet Buttons */}
+          <div className="header-buttons">
             <WalletMultiButton />
             <WalletDisconnectButton />
           </div>
-          <RequestAirdrop></RequestAirdrop>
-          <div>
-            <SendTokens/>
-            <ShowSolBalance/>
+
+          {/* Request Airdrop */}
+          <div className="card">
+            <h2>Request Airdrop</h2>
+            <RequestAirdrop />
           </div>
-  
+
+          {/* Show SOL Balance */}
+          <div className="card">
+            <h2>Show SOL Balance For Your Account {<WalletMultiButton />}  </h2>
+            <ShowSolBalance />
+          </div>
+
+          {/* Send Tokens */}
+          <div className="card">
+            <h2>Send SOL Tokens</h2>
+            <SendTokens />
+          </div>
+
+          {/* Sign Message */}
+          <div className="card">
+            <h2>Sign a Message</h2>
+            <SignMessage />
+          </div>
+
+          <div>
+            <p>By Sourav Malviya</p>
+          </div>
+
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
+
+    
   );
 }
 
