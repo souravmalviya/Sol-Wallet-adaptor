@@ -2,8 +2,8 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
-export function Airdrop() {
-  const wallet = useWallet();
+export function RequestAirdrop() {
+  const wallet = useWallet(); //hooks in React 
   const { connection } = useConnection();
 
   async function requestAirdrop() {
@@ -25,4 +25,4 @@ export function Airdrop() {
   );
 }
 
-export default  Airdrop;
+export default  RequestAirdrop;
